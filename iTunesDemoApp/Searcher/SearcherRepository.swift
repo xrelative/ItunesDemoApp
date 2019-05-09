@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yapo.cl. All rights reserved.
 //
 
-import Foundation
-
 protocol SearcherRepositoryProtocol: Repository {
     func getResults(value: String, completion: @escaping (Result<ApiResponse, Error>) -> Void)
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yapo.cl. All rights reserved.
 //
 
-import Foundation
-
 protocol SearcherInteractorProtocol: Interactor {
     func getResults(value: String)
 }

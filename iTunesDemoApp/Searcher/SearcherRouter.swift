@@ -6,4 +6,6 @@
 //  Copyright © 2019 Yapo.cl. All rights reserved.
 //
 
-import Foundation
+protocol SearcherRouterProtocol: Router {}
+
+class SearcherRouter: SearcherRouterProtocol {}

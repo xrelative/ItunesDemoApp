@@ -28,6 +28,7 @@
 		4F36D7A62284B006001E2FEB /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F36D7A52284B006001E2FEB /* ResultTableViewCell.xib */; };
 		4F36D7A82284B740001E2FEB /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F36D7A72284B740001E2FEB /* ResultTableViewCell.swift */; };
 		4F36D7AA2284BD9C001E2FEB /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F36D7A92284BD9C001E2FEB /* UIKitExtensions.swift */; };
+		4F36D7AC2284CF8D001E2FEB /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F36D7AB2284CF8D001E2FEB /* Audio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		4F36D7A52284B006001E2FEB /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		4F36D7A72284B740001E2FEB /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		4F36D7A92284BD9C001E2FEB /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		4F36D7AB2284CF8D001E2FEB /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		4F36D79322846BCE001E2FEB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F36D7AB2284CF8D001E2FEB /* Audio.swift */,
 				4F36D79422846C2D001E2FEB /* Networking.swift */,
 				4F36D7A92284BD9C001E2FEB /* UIKitExtensions.swift */,
 			);
@@ -339,6 +342,7 @@
 				4F36D79522846C2D001E2FEB /* Networking.swift in Sources */,
 				4F36D7A2228498B6001E2FEB /* RootRouter.swift in Sources */,
 				4F36D7582283727A001E2FEB /* AppDelegate.swift in Sources */,
+				4F36D7AC2284CF8D001E2FEB /* Audio.swift in Sources */,
 				4F36D78A22837319001E2FEB /* SearcherInteractor.swift in Sources */,
 				4F36D7902283736A001E2FEB /* ApiDataSource.swift in Sources */,
 				4F36D78E2283733B001E2FEB /* SearcherViewController.swift in Sources */,

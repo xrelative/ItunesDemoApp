@@ -34,7 +34,6 @@ class SearcherViewController: UIViewController {
     }
 
     func initSearchController() {
-        // Setup the Search Controller
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Artists"
         searchController.searchResultsUpdater = self
@@ -79,28 +78,17 @@ extension SearcherViewController: UITableViewDataSource {
 // MARK: - UITableView Delegate
 extension SearcherViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        if let previewUrl = results[indexPath.row].previewUrl, let url = URL(string: previewUrl) {
-            downloadFileFromURL(audioUrl: url)
-        }
-    }
-
-    func downloadFileFromURL(audioUrl: URL) {
-        URLSession.shared.downloadTask(with: audioUrl, completionHandler: { [weak self] url, response, error in
-            guard let strongSelf = self else { return }
-            guard let url = url else { return }
-            strongSelf.play(url: url)
-        }).resume()
-
-    }
-
-    func play(url: URL) {
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player.prepareToPlay()
-            player.volume = 1.0
-            player.play()
-        } catch {
-            debugPrint(error.localizedDescription)
+        if let previewUrl = results[indexPath.row].previewUrl {
+            AudioUtils.play(from: previewUrl) { [weak self] url in
+                guard let strongSelf = self else { return }
+                do {
+                    strongSelf.player = try AVAudioPlayer(contentsOf: url)
+                    strongSelf.player.prepareToPlay()
+                    strongSelf.player.play()
+                } catch {
+                    debugPrint(error.localizedDescription)
+                }
+            }
         }
     }
 }
