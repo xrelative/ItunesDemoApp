@@ -11,3 +11,4 @@ protocol Repository: class {}
 protocol Interactor: class {}
 protocol Router: class {}
 protocol Presenter: class {}
+protocol Wireframe {}

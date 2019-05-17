@@ -11,7 +11,7 @@ protocol SearcherRepositoryProtocol: Repository {
 }
 
 class SearcherRepository: SearcherRepositoryProtocol {
-    let dataSource: ItunesDataSourceProtocol
+    private let dataSource: ItunesDataSourceProtocol
 
     init(dataSource: ItunesDataSourceProtocol) {
         self.dataSource = dataSource

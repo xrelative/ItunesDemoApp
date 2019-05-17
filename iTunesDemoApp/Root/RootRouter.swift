@@ -10,6 +10,7 @@ import UIKit
 
 class RootRouter: Router {
     static func showRootViewController() -> UIViewController {
-        return UINavigationController(rootViewController: SearcherWireframe.assemble())
+        let searcher = SearcherWireframe()
+        return UINavigationController(rootViewController: searcher.assemble())
     }
 }

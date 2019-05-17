@@ -6,7 +6,8 @@
 //  Copyright © 2019 Yapo.cl. All rights reserved.
 //
 
-protocol SearcherPresenterProtocol: Presenter {
+protocol SearcherPresenterProtocol: Presenter, SearcherInteractorDelegate {
+    var view: SearcherView? { get set }
     func getResults(value: String)
 }
 
@@ -16,11 +17,12 @@ protocol SearcherView: class {
 }
 
 class SearcherPresenter: SearcherPresenterProtocol {
-    let interactor: SearcherInteractorProtocol
+    private let interactor: SearcherInteractorProtocol
     weak var view: SearcherView?
 
     init(interactor: SearcherInteractorProtocol) {
         self.interactor = interactor
+        self.interactor.delegate = self
     }
 
     func getResults(value: String) {

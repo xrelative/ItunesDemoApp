@@ -7,6 +7,7 @@
 //
 
 protocol SearcherInteractorProtocol: Interactor {
+    var delegate: SearcherInteractorDelegate? { get set }
     func getResults(value: String)
 }
 
@@ -16,7 +17,7 @@ protocol SearcherInteractorDelegate: class {
 }
 
 class SearcherInteractor: SearcherInteractorProtocol {
-    let repository: SearcherRepositoryProtocol
+    private let repository: SearcherRepositoryProtocol
     weak var delegate: SearcherInteractorDelegate?
 
     init(repository: SearcherRepositoryProtocol) {

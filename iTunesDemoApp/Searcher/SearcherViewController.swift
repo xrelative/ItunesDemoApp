@@ -10,16 +10,17 @@ import UIKit
 import AVFoundation
 
 class SearcherViewController: UIViewController {
-    let presenter: SearcherPresenterProtocol?
-    let searchController = UISearchController(searchResultsController: nil)
-    var player = AVAudioPlayer()
-    var results = [ResultRow]()
+    private let presenter: SearcherPresenterProtocol?
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var player = AVAudioPlayer()
+    private var results = [ResultRow]()
 
     @IBOutlet var tableView: UITableView?
 
     init(presenter: SearcherPresenterProtocol?) {
         self.presenter = presenter
         super.init(nibName: SearcherViewController.nameOfClass, bundle: Bundle.main)
+        self.presenter?.view = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +34,7 @@ class SearcherViewController: UIViewController {
         tableView?.register(ResultTableViewCell.nib, forCellReuseIdentifier: ResultTableViewCell.reusableIdentifier)
     }
 
-    func initSearchController() {
+    private func initSearchController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Artists"
         searchController.searchResultsUpdater = self
